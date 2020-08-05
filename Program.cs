@@ -6,8 +6,9 @@ namespace leetcode
     {
         static void Main(string[] args)
         {
-            LongestSubstring longest = new LongestSubstring();
-            Console.WriteLine(longest.LengthOfLongestSubstring("asdasdasd"));
+            Power4 power = new Power4();
+            var res = power.IsPowerOfFour(4);
+            Console.WriteLine(res);
         }
     }
 }
