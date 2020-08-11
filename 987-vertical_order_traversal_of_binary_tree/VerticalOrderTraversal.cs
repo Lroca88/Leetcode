@@ -1,9 +1,11 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 /**
  * Definition for a binary tree node.
  */
- public class TreeNode {
+public class TreeNode {
     public int val;
     public TreeNode left;
     public TreeNode right;
@@ -18,33 +20,47 @@ public class VerticalOrderTraversal {
     Dictionary<int, Node> dict;
     public IList<IList<int>> VerticalTraversal(TreeNode root) {
         dict = new Dictionary<int, Node>();
-        InOrder(root, 0);
-        
-        return null;
+        List<Node> nodes = new List<Node>();
+        IList<IList<int>> res = new List<IList<int>>();
+        InOrder(root, 0, 0);
+        foreach(var val in dict.Values) {
+            val.numbers.Sort((t1, t2) => {
+                if (t2.Item1 != t1.Item1) {
+                    return t2.Item1.CompareTo(t1.Item1);
+                }
+                return t1.Item2.CompareTo(t2.Item2);
+            });
+            nodes.Add(val);
+        }
+        nodes.Sort((val1, val2) => val1.x.CompareTo(val2.x));
+        foreach(var l in nodes) {  
+            res.Add(l.numbers.Select(t => t.Item2).ToList());
+        }
+        return res;
     }
 
-    public void InOrder(TreeNode root, int x) {
+    public void InOrder(TreeNode root, int x, int y) {
         if (root == null) return;
 
-        InOrder(root.left, x - 1);
+        InOrder(root.left, x - 1, y - 1);
         
         if (dict.ContainsKey(x)) {
-            dict[x].numbers.Add(root.val);
+            dict[x].numbers.Add(Tuple.Create(y, root.val));
         } else {
-            dict[x] = new Node(x, root.val);
+            dict[x] = new Node(x, y, root.val);
         }
         
-        InOrder(root.right, x + 1);
+        InOrder(root.right, x + 1, y - 1);
     }
 
     private class Node
     {
         public int x { get; set; }
-        public IList<int> numbers { get; set; }
+        public List<Tuple<int, int>> numbers { get; set; }
 
-        public Node(int x = int.MaxValue, int val = int.MaxValue) {
+        public Node(int x = int.MaxValue, int y = int.MaxValue, int val = int.MaxValue) {
             this.x = x;
-            numbers = new List<int> { val };
+            numbers = new List<Tuple<int, int>> { Tuple.Create(y, val) };
         }
     }
 }
