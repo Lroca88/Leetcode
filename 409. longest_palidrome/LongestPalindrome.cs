@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-public class Solution {
+public class LgestPalindrome {
     private Dictionary<char, int> chars = new Dictionary<char, int>();
     
     public int LongestPalindrome(string s) {
