@@ -39,10 +39,11 @@ public class StoneGame5 {
         
         for (int i = 0; i < n; i++) {
             stoneMat[i] = new int[n];
-            stoneSum[i+1] = stoneSum[i] + stoneValue[i];
+            stoneSum[i+1] = stoneSum[i] + stoneValue[i]; // Useful to not calculate sums every time
         }
 
         BuildMatrix(stoneValue);
+        // Need to remove the total sum of the original array
         int gameMax = stoneMat[0][n-1] - stoneSum[n];
         return gameMax;
     }
