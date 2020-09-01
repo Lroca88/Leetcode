@@ -6,9 +6,9 @@ namespace leetcode
     {
         static void Main(string[] args)
         {
-            StoneGame5 stone = new StoneGame5();
+            Sum3 sum = new Sum3();
             
-            Console.WriteLine(stone.StoneGameV(new int[]{7,2,2,2,2}));
+            Console.WriteLine(sum.ThreeSum(new int[]{-1,0,1,2,-1,-4}));
         }
     }
 }
