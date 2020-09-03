@@ -6,9 +6,9 @@ namespace leetcode
     {
         static void Main(string[] args)
         {
-            Sum3 sum = new Sum3();
+            LongestConsecutiveS l = new LongestConsecutiveS();
             
-            Console.WriteLine(sum.ThreeSum(new int[]{-1,0,1,2,-1,-4}));
+            Console.WriteLine(l.LongestConsecutive(new int[]{4,0,-4,-2,2,5,2,0,-8,-8,-8,-8,-1,7,4,5,5,-4,6,6,-3}));
         }
     }
 }
