@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace leetcode
 {
@@ -6,27 +7,19 @@ namespace leetcode
     {
         static void Main(string[] args)
         {
-            MedianFinder mf = new MedianFinder();
-            mf.AddNum(1);
-            Console.WriteLine(mf.FindMedian());
-            mf.AddNum(2);
-            Console.WriteLine(mf.FindMedian());
-            mf.AddNum(3);
-            Console.WriteLine(mf.FindMedian());
-            mf.AddNum(4);
-            Console.WriteLine(mf.FindMedian());
-            mf.AddNum(5);
-            Console.WriteLine(mf.FindMedian());
-            mf.AddNum(6);
-            Console.WriteLine(mf.FindMedian());
-            mf.AddNum(7);
-            Console.WriteLine(mf.FindMedian());
-            mf.AddNum(8);
-            Console.WriteLine(mf.FindMedian());
-            mf.AddNum(9);
-            Console.WriteLine(mf.FindMedian());
-            mf.AddNum(10);
-            Console.WriteLine(mf.FindMedian());
+            CheapestFlights cp = new CheapestFlights();
+            var flights = new int[][] {
+                new int[] {0,1,2},
+                new int[] {0,2,5},
+                new int[] {1,2,2},
+                new int[] {2,3,1},
+                new int[] {2,4,4},
+                new int[] {3,4,1},
+            };
+            int ans = cp.FindCheapestPrice(5, flights, 0, 4, 3);
+            Console.WriteLine(ans);
+            
         }
     }
 }
+
