@@ -6,18 +6,24 @@ namespace leetcode
     class Program
     {
         static void Main(string[] args) {
-           MaxNumOfVisiblePoints max = new MaxNumOfVisiblePoints();
-           max.VisiblePoints(
-               new List<IList<int>> {
-                   new List<int> {2,2},
-                   new List<int> {-2,10},
-                   new List<int> {-2,-2},
-                   new List<int> {2,-2},
-                   new List<int> {1,1}
-               },
-               90,
-               new List<int> {0,0}
-           );
+            MaxNumRequests max = new MaxNumRequests();
+            Console.WriteLine(max.MaximumRequests(
+               2,
+               new int[][] {
+                   new int[] {1,1},
+                   new int[] {1,0},
+                   new int[] {0,1},
+                   new int[] {0,0},
+                   new int[] {0,0},
+                   new int[] {0,1},
+                   new int[] {0,1},
+                   new int[] {1,0},
+                   new int[] {1,0},
+                   new int[] {1,1},
+                   new int[] {0,0},
+                   new int[] {1,0}
+               }
+            ));
         }
     }
 }
