@@ -6,7 +6,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="9. palindrome_number\" />
+    <Compile Remove="104. maximum_depth_of_binary_tree\**" />
+    <Compile Remove="8. string_to_Integer_%28atoi%29\**" />
+    <Compile Remove="9. palindrome_number\**" />
+    <EmbeddedResource Remove="104. maximum_depth_of_binary_tree\**" />
+    <EmbeddedResource Remove="8. string_to_Integer_%28atoi%29\**" />
+    <EmbeddedResource Remove="9. palindrome_number\**" />
+    <None Remove="104. maximum_depth_of_binary_tree\**" />
+    <None Remove="8. string_to_Integer_%28atoi%29\**" />
+    <None Remove="9. palindrome_number\**" />
   </ItemGroup>
 
 </Project>

@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using listNode = MergeTwoSortedLists.ListNode;
 namespace leetcode
 {
     class Program
     {
         static void Main(string[] args) {
-            SmallestStr si = new SmallestStr();
-            Console.WriteLine(si.FindLexSmallestString("74", 5, 1));
+            var tree = new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
+            MaxDepthTree maxDeepTree = new MaxDepthTree();
+            maxDeepTree.MaxDepth(tree);
         }
     }
 }
